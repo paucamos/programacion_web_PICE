@@ -1,0 +1,27 @@
+body {
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(94,9,121,1) 38%, rgba(255,0,174,1) 100%);
+}
+div {
+    color: white;
+}
+h1 {
+    color: red;
+}
+div h1 { /*Tipus de colors*/
+    color: #d400ff;
+
+    /*color: rgb(000, 000, 000);*/
+    /*color: rgba(000, 000, 000, 0.25);*/
+
+    /*color: hsl(300, 90, 30);*/
+    /*color: hsla(hue, saturation, lightness, alpha)*/
+}
+p {
+    font-size: 12px;
+}
+.contingut_article {
+    font-size: 16px;
+}
+p.contingut_article { /*Quan mes especific mes important*/
+    font-size: 18px;
+}

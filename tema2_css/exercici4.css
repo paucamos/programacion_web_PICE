@@ -1,0 +1,15 @@
+p#p1 {
+    background-color: blue;
+    width: 400px;
+    height: 300px;
+    margin: auto;
+    padding: 100px;
+    border: 1px solid black;
+    box-sizing: border-box; /*utilitza el padding i border dins lamplada*/
+}
+p#p2 {
+    background-color: red;
+    width: 500px;
+    height: 250px;
+    margin-top: 200px;
+}

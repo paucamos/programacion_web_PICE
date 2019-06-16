@@ -1,0 +1,16 @@
+table tr:first-child {
+    background-color: black;
+    color: white;
+}
+table tr:nth-child(2n) {
+    background-color: grey;
+}
+table tr:last-child {
+    background-color: red;
+}
+table tr td:last-child {
+    font-weight: bold;
+}
+table tr:last-child td:last-child {
+    text-decoration: underline;
+}

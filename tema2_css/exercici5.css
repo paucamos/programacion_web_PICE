@@ -1,0 +1,11 @@
+p::before { /*define lo que hay antes de el elemento*/
+    content: url(im1.png);
+}
+p::selection {
+    /*serveix per posar estil de cuan selecciones*/
+    background-color: yellow;
+}
+p::first-letter {
+    /*modifica la primera lletra*/
+    font-size: 80px;
+}

@@ -1,0 +1,73 @@
+/*Selectors*/
+h1 {
+    font-size: 80px;
+    color: red;
+}
+.lletra {
+    font-family: 'Helvetica';
+}
+#parrafo2 {
+    background-color: aqua;
+}
+p.lletra {
+    font-size: 30px;
+}
+p#parrafo2 {
+    font-family: 'Gill Sans';
+}
+b {
+    text-decoration: underline;
+}
+h1 b {
+    color: blue;
+}
+p.lletra b {
+    color: orange;
+}
+p i {
+    color: red;
+}
+p > i {
+    background-color: blueviolet;
+}
+h1 + p { /*agafa el primer element p despres de h1*/
+    text-decoration: underline;
+}
+h1 ~ p {
+    color: green;
+}
+
+a {
+    text-decoration: none;
+}
+a:hover {
+    color: red;
+    text-decoration: underline;
+}
+a:visited { /*enllaços visitats*/
+    
+}
+a:link { /*enllaços no visitats*/
+
+}
+a:active { /*enllaços focus*/
+
+}
+
+/*Fills*/
+li {
+    color: red;
+    font-size: 20px;
+}
+li:first-child {
+    color: blue;
+}
+li:last-child {
+    color: green;
+}
+li:nth-child(3) { /*Agafa el 3er fill d'un element*/
+    background-color: blue;
+}
+li:nth-child(even) { /*Cada X elements (even [parells] / odd [senars])*/
+    color: black;
+}
