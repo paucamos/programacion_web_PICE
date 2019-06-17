@@ -1,0 +1,32 @@
+h1 {
+    font-size: 24px;
+}
+div {
+    position: relative;
+    float: left;
+    width: 35%;
+    margin-left: 10%;
+    background-color: cyan;
+}
+@media screen and (min-width: 900px) {
+    body {
+        background-image: url(img1.jpg);
+    }
+    div {
+        width: 20%;
+    }
+    h1 {
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 600px) {
+    body {
+        background-image: url(img2.jpg);
+    }
+    div {
+        width: 80%;
+    }
+    h1 {
+        font-size: 15px;
+    }
+}

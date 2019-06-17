@@ -1,0 +1,19 @@
+div {
+    width: 400px;
+    height: 400px;
+    float: left;
+    position: relative;
+}
+#capa1 {
+    background-color: #ffcccc;
+}
+#capa2 {
+    background-color: red;
+}
+#capa3{
+    background-color: green;
+}
+#capa4 {
+    background-color: blue;
+    clear: right;
+}
