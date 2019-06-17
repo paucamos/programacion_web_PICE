@@ -46,8 +46,15 @@ p {
     text-align: center;
     cursor: pointer;
 }
+.elements a {
+    color: white;
+    text-decoration: none;
+}
 .elements:hover {
     background-color: #999999;
+}
+.elements:nth-child(3) {
+    background-color: #4CAF50;
 }
 #principal h2 {
 

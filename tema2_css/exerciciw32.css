@@ -1,7 +1,6 @@
 body {
     font-family: Arial;
     margin: 20px;
-    line-height: 26px;
     background-color: #d14836;
 }
 h1 {
@@ -23,7 +22,7 @@ header {
 header p {
     font-size: 30px;
 }
-a {
+#principal a {
     user-select: none;
     text-decoration: none;
     color: #d14836;
@@ -44,27 +43,40 @@ p {
 #elements_menu {
     width: 155px;
     border-radius: 40px;
-    color: #ffffff;
+    color: white;
+    list-style-type: none;
+    margin: 10px;
+    padding: 1px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.elements {
+    width: 155px;
+    background-color: #d14836;
+    border: 1px solid #d14836;
+    border-radius: 40px;
     list-style-type: none;
     margin: 10px;
     padding: 5px;
     text-align: center;
     cursor: pointer;
 }
-.elements {
-    list-style-type: none;
-    color: white;
-    background-color: #d14836;
-    border: 1px solid #d14836;
-    padding: 2px;
-    cursor: pointer;
-    margin: 4px;
-    border-radius: 25px;
-}
 .elements:hover {
-    background-color: #fff;
     color: #d14836;
+    background-color: white;
+    
 }
+.elements a {
+    text-decoration: none;
+}
+
+.elements:nth-child(2) {
+    background-color: white;
+    color: #d14836;
+    font-weight: bold;
+}
+
 #principal h2 {
     color: #d14836;
     font-size: 26px;

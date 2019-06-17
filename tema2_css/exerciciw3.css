@@ -14,7 +14,7 @@ header {
     margin: 4px;
     color: white;
 }
-a {
+#principal a {
     user-select: none;
     text-decoration: none;
     color: black;
@@ -31,6 +31,11 @@ p {
     margin: 0;
     padding: 0;
 }
+#elements_menu a {
+    text-decoration: none;
+    color: black;
+}
+
 .elements {
     list-style-type: none;
     background-color: #f1f1f1;
@@ -40,9 +45,19 @@ p {
     margin: 4px;
     border-radius: 5px;
 }
+.elements:first-child {
+    background-color: #4CAF50;
+    color: white;
+    font-weight: bold;
+}
+.elements:first-child:hover {
+    background-color: #4CAF50;
+    color: white;
+}
 .elements:hover {
     background-color: #fff;
 }
+
 #principal {
     padding: 10px;
     margin: 0 210px;
@@ -62,4 +77,15 @@ footer {
     line-height: 14px;
     border-radius: 10px;
     margin: 4px;
+}
+@media screen and (max-width: 750px) {
+    #menu {
+        width: 100%;
+    }
+    header h1 {
+        margin: 4px;
+    }
+    #principal {
+        margin: 0 auto;
+    }
 }
