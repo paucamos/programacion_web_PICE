@@ -1,0 +1,32 @@
+header .row {
+    margin: 50px 0;
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 5px;
+}
+header img {
+    width: 100px;
+    height: 100px;
+    margin-left: -15px;
+}
+header h1 {
+    margin: 30px;
+    width: 400px;
+}
+#panell {
+    border: solid 1px black;
+    border-radius: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+    height: auto;
+}
+#sidebar {
+    border: solid 1px black;
+    border-radius: 15px;
+    padding: 5px;
+}
+footer .row {
+    margin-top: 20px;
+    border-radius: 15px;
+    border: 1px solid black;
+}
