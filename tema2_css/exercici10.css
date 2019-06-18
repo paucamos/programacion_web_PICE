@@ -1,0 +1,15 @@
+div {
+    width: 150px;
+    height: 50px;
+    margin: 5px;
+    background-color: red;
+    
+}
+div:first-child {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;   
+}
+div:last-child {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}

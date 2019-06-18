@@ -1,0 +1,11 @@
+h1 {
+    color: white;
+    text-shadow: 4px 3px 4px black;
+}
+div {
+    width: 200px;
+    height: 100px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 4px 3px 14px black;
+}

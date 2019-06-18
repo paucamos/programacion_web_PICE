@@ -1,0 +1,8 @@
+@font-face {
+    font-family: 'familia1';
+    src: url('Beautiful Creatures.ttf');
+}
+h1 {
+    font-family: 'familia1','Roboto', Helvetica, serif;
+    font-size: 90px;
+}

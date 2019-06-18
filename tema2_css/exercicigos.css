@@ -1,0 +1,41 @@
+div {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    transition: 1s;
+    background-image: url('imggos.jpg');
+    background-image: center;
+}
+#part1 {
+    background-color: red;
+}
+#part1:hover {
+    width: 250px;
+    height: 250px;
+}
+#part2 {
+    background-color: green;
+    margin-left: 300px;
+}
+#part2:hover {
+    width: 250px;
+    height: 250px;
+    transform: translate(-50px, 0);
+}
+#part3 {
+    background-color: blue;
+    margin-top: 300px;
+}
+#part3:hover {
+    width: 250px;
+    height: 250px;
+    transform: translate(50px, 0);
+}
+#part4 {
+    background-color: yellow;
+    margin-left: 300px;
+    margin-top: 300px;
+}
+#part4:hover {
+    
+}
