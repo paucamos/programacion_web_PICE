@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../tema3_bootstrap/bootstrap-3.4.1-dist/css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/15b5d03a5a.js"></script>
+</head>
+<style>
+    .container {
+        margin-top: 15%;
+    }
+    input {
+        margin-top: 10px;
+        border-radius: 5px;
+    }
+    input[type='button'] {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        width: 100px;
+    }
+    .col-xs-12 {
+        text-align: center;
+        margin-top: 15px;
+        background-color: #e2f6fe;
+        color: #11b5f7;
+        border-radius: 5px;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <form action="" name="form1">
+                    
+                    <h1>
+                        <span>
+                            <i class="fas fa-temperature-high"></i>
+                        </span> 
+                        Calcula temperatura:
+                    </h1>
+
+                    <span><i class="fas fa-fire"></i></span>
+                    <label for="celsius"> Celsius:</label>
+                    <input type="text" name="celsius" id="">
+                    <br>
+
+                    <span><i class="fas fa-fire"></i></span>
+                    <label for="fahrenheit"> Fahrenheit:</label>
+                    <input type="text" name="fahrenheit" id="">
+                    <br>
+
+                    <input type="button" value="Calcula" class="btn-primary" onclick="calcula();">
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        function calcula() {
+            var celsius = document.forms['form1']['celsius'].value;
+            var fahrenheit = document.forms['form1']['fahrenheit'].value;
+
+            if (celsius=="") {
+                document.forms['form1']['fahrenheit'].value = "";
+                var resultatCels = (fahrenheit - 32) / 1.8;
+                document.forms['form1']['celsius'].value = resultatCels;
+            } else {
+                document.forms['form1']['celsius'].value = "";
+                var resultatFahr = (celsius * 1.8) + 32;
+                document.forms['form1']['fahrenheit'].value = resultatFahr;
+            }
+
+        }
+    </script>
+</body>
+</html>
