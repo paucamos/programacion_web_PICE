@@ -32,7 +32,7 @@
     form {
         background-color: rgba(0, 0, 0, 0.6);
         padding: 10px;
-        width: 945px;
+        width: 700px;
         margin: auto;
         margin-top: 20px;
         border-radius: 10px;
@@ -51,13 +51,26 @@
         border: 1px white solid;
     }
     span {
-        margin-left: 100px;
+        margin-left: 75px;
     }
     img {
-        width: 100px;
-        height: 100px;;
+        width: 320px;
+        height: 320px;
+        margin-top: 20px;
+        padding: 3px;
+        border-radius: 15px;
     }
-    
+    .totals {
+        position: relative;
+        width: 300px;
+        height: auto;
+        padding: 10px;
+        float: left;
+        margin-top: 125px;
+    }
+    td {
+        padding: 4px;
+    }
 </style>
 <body>
     <div class="container">
@@ -69,50 +82,78 @@
             </header>
         </div>
         <div class="row">
-            <div class="col-xs-6">
+            <div class="col-xs-7">
                 <form action="" name="form1">
-                    <label for="tipus">Tipus: </label>
-                    <select name="tipus" id="" onchange="canviaImatge(); mostraPreu();">
-                        <option value=""> -- Selecciona el tipus --</option>
-                        <option value="2.99"> Cucurutxo </option></a>
-                        <option value="4.99"> Copa </option>
-                        <option value="1.25"> Vaset </option>
-                    </select>
-                    <span id="preuTipus"></span>
-                    <span>
-                        <img src="" alt="" id="imatge">
-                    </span>
-                    <br>
-                    
-                    <label for="boles">Boles: </label>
-                    <input type="number" name="boles" id="" onchange="mostraPreu();">
-                    <span id="preuBoles"></span>
-                    <br>
-                    
-                    <label for="topping">Topping: </label>
-                    <input type="number" name="topping" id="" onchange="mostraPreu();">
-                    <span id="preuTopping"></span>
-                    <br>
-
-                    <label for="sirope">Sirope: </label>
-                    <input type="number" name="sirope" id="" onchange="mostraPreu();">
-                    <span id="preuSirope"></span>
-                    <br>
-
-                    <label for="cireres">Cireres: </label>
-                    <input type="number" name="cireres" id="" onchange="mostraPreu();">
-                    <span id="preuCireres"></span>
-                    <br>
-
-                    <label for="resum">Resum: </label>
-                    <span id="resum"></span>
-                    <br>
-
-                    <label for="quantitat">Quantitat: </label>
-                    <input type="number" name="quantitat" id="" onchange="mostraPreu();" value="1">
-                    <p>Total: <span id="total" ></span></p>
-                    <br>
+                    <h2>Selecciona el teu gelat:</h2>
+                    <table border="1">
+                        <tr>
+                            <td>
+                                <label for="tipus">Tipus: </label>
+                            </td>
+                            <td>
+                                <select name="tipus" id="" onchange="canviaImatge(); mostraPreu();">
+                                    <option value=""> -- Selecciona el tipus --</option>
+                                    <option value="2.99"> Cucurutxo </option></a>
+                                    <option value="4.99"> Copa </option>
+                                    <option value="1.25"> Vaset </option>
+                                </select>
+                            </td>
+                            <td><span id="preuTipus"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="boles">Boles: </label>
+                            </td>
+                            <td>
+                                <input type="number" name="boles" id="" onchange="mostraPreu();">
+                            </td>
+                            <td><span id="preuBoles"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="topping">Topping: </label></td>
+                            <td>
+                                <input type="number" name="topping" id="" onchange="mostraPreu();">
+                            </td>
+                            <td><span id="preuTopping"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="sirope">Sirope: </label></td>
+                            <td>
+                                <input type="number" name="sirope" id="" onchange="mostraPreu();">
+                            </td>
+                            <td><span id="preuSirope"></span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="cireres">Cireres: </label></td>
+                            <td>
+                                <input type="number" name="cireres" id="" onchange="mostraPreu();">
+                            </td>
+                            <td><span id="preuCireres"></span></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td><span id="resum">Resum: 0 €</span></td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="quantitat">Quantitat: </label>
+                            </td>
+                            <td>
+                                <input type="number" name="quantitat" id="" onchange="mostraPreu();" value="1">
+                            </td>
+                            <td><span id="total" >Total: 0 €</span></td>
+                        </tr>
+                    </table>
                 </form>
+            </div>
+            <div class="col-xs-5">
+                <span class="img_gelat">
+                    <img src="triagelat.jpg" alt="" id="imatge">
+                </span>
             </div>
         </div>
     </div>
@@ -154,8 +195,8 @@
             document.getElementById('preuTopping').innerHTML = preuTopping.toFixed(2) + " €";
             document.getElementById('preuSirope').innerHTML = preuSirope.toFixed(2) + " €";
             document.getElementById('preuCireres').innerHTML = preuCireres.toFixed(2) + " €";
-            document.getElementById('resum').innerHTML = resum.toFixed(2) + " €";
-            document.getElementById('total').innerHTML = preuFinal.toFixed(2) + " €";
+            document.getElementById('resum').innerHTML = 'Resum: ' + resum.toFixed(2) + " €";
+            document.getElementById('total').innerHTML = 'Total: ' + preuFinal.toFixed(2) + " €";
         }
     </script>
 </body>
