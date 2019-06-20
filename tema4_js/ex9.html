@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="resultat"></div>
+
+    <script>
+        function mostraData() {
+            var d = new Date();
+            var dia = d.getDate();
+            var mes = d.getMonth();
+
+            if( (mes==0) || (mes==1) || ((mes==2) && (dia<21)) || (mes==11) && (dia>=21) ) {
+                alert('Hivern');
+            } else if( (mes==3) || (mes==4) || ((mes==5) && (dia<21)) || (mes==2) && (dia>=21) ) {
+                alert('Primavera');
+            } else if ( (mes==6) || (mes==7) || ((mes==8) && (dia<21)) || (mes==6) && (dia>=21) ) {
+                alert('Tardor');
+            }
+        }
+        mostraData();
+    </script>
+</body>
+</html>
