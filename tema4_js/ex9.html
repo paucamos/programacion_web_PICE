@@ -6,9 +6,16 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<style>
+    body {
+        font-family: Helvetica;
+    }
+    h1 {
+        font-size: 75px;
+    }
+</style>
 <body>
     <div class="resultat"></div>
-
     <script>
         function mostraData() {
             var d = new Date();
@@ -16,11 +23,25 @@
             var mes = d.getMonth();
 
             if( (mes==0) || (mes==1) || ((mes==2) && (dia<21)) || (mes==11) && (dia>=21) ) {
-                alert('Hivern');
+                document.write('<h1> Hivern </h1>');
+                document.body.style.backgroundImage = "url('hivern.jpg')";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backgroundSize = "cover";
             } else if( (mes==3) || (mes==4) || ((mes==5) && (dia<21)) || (mes==2) && (dia>=21) ) {
-                alert('Primavera');
+                document.write('<h1> Primavera </h1>');
+                document.body.style.backgroundImage = "url('primavera.jpg')";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backgroundSize = "cover";
             } else if ( (mes==6) || (mes==7) || ((mes==8) && (dia<21)) || (mes==6) && (dia>=21) ) {
-                alert('Tardor');
+                document.write('<h1> Estiu </h1>');
+                document.body.style.backgroundImage = "url('estiu.jpg')";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backgroundSize = "cover";
+            } else if ( (mes==9) || (mes==10) || ((mes==11) && (dia<21)) || (mes==9) && (dia>=21) ) {
+                document.write('<h1> Tardor </h1>');
+                document.body.style.backgroundImage = "url('tardor.jpg')";
+                document.body.style.backgroundRepeat = "no-repeat";
+                document.body.style.backgroundSize = "cover";
             }
         }
         mostraData();

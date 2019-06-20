@@ -7,9 +7,20 @@
     <title>Document</title>
 </head>
 <body>
+    <label for="numero">Posa un número: </label>
+    <input type="text" name="numero" id="num">
+    <input type="button" value="Mostra" onclick="mostrarNumero();">
+    <br>
+    <div id="resultat"></div>
     <script>
-        for (var i = 0; i < 10; i++) {
-            document.write(i + '<p>Send help</p>');
+        function mostrarNumero() {
+            var numero = document.getElementById('num').value;
+            document.write('<table>');
+            document.write+=('<tr>');
+            for (var i = 0; i < numero; i++) {
+
+                document.write+=(i+1);
+            }
         }
     </script>
 </body>
