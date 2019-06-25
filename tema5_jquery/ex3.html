@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../tema3_bootstrap/bootstrap-3.4.1-dist/css/bootstrap.css">
+</head>
+<style>
+    img {
+        width: 50px;
+        height: 50px;
+    }
+    @media only screen and (max-width: 1200px) {
+        #fletxa2 {
+            text-align: right;
+            right: 300px;
+            top: 15px;
+        }
+        #fletxa2 img {
+            transform: rotate(90deg);
+        }
+        #fletxa3 {
+            transform: rotate(180deg);
+        }
+    }
+    @media only screen and (max-width: 768px) {
+        #fletxa1 img {
+            transform: rotate(90deg);
+        }
+        #fletxa2 img {
+            transform: rotate(90deg);
+        }
+        #fletxa3 img {
+            transform: rotate(-90deg);
+        }
+        #fletxa1 {
+            left: 32%;
+        }
+        #fletxa2 {
+            left: -50%;
+        }
+        #fletxa3 {
+            left: -50%;
+        }
+    }
+</style>
+<body>
+    <div class="container">
+            <div class="progress">
+                <div id="dynamic" class="progress-bar progress-bar-success progress-bar-striped active" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    <span id="current-progress"></span>
+                </div>
+            </div>
+        <div class="row">
+            <div class="col-lg-2 col-md-5 col-xs-12">
+                <h2>Escull el teu producte:</h2>
+                <select name="productes" id="productes">
+                    <option value=""> -- Escull un producte --</option>
+                    <option value="1">Gelat</option>
+                    <option value="2">Granitzat</option>
+                    <option value="3">Crep</option>
+                </select>
+            </div>
+            <div class="col-lg-1 col-md-2 col-xs-12" id="fletxa1" style="display: none;">
+                <img src="./flecha.jpg" alt="" srcset="">
+            </div>
+            <!-- Pas 2 -->
+            <div class="col-lg-2 col-md-5 col-xs-12" id="">
+                <div id="gelat" style="display: none;">
+                    <h2>Escull el tipus de gelat:</h2>
+                    <select name="" id="tipusGelat">
+                        <option value="">-- Escull el tipus --</option>
+                        <option value="1">Cucurutxo</option>
+                        <option value="2">Tarrina</option>
+                    </select>
+                </div>
+                <div id="granitzat" style="display: none;">
+                    <h2>Escull el tipus de Granitzat:</h2>
+                    <select name="" id="tipusGranitzat">
+                        <option value="">-- Escull el tipus --</option>
+                        <option value="1">Petit</option>
+                        <option value="2">Mitjà</option>
+                        <option value="3">Gran</option>
+                    </select>
+                </div>
+                <div id="crep" style="display: none;">
+                    <h2>Escull el tipus de Crep:</h2>
+                    <select name="" id="tipusCrep">
+                        <option value="">-- Escull el tipus --</option>
+                        <option value="1">Dolça</option>
+                        <option value="2">Salada</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-12 col-xs-12" id="fletxa2" style="display: none;">
+                    <img src="./flecha.jpg" alt="" srcset="">
+                </div>
+
+            <!-- Pas 3 -->
+            <div class="col-lg-2 col-lg-push-0 col-md-5 col-md-push-6 col-xs-12">
+                <div id="saborGelat" style="display: none;">
+                    <h2>Escull el gust del gelat:</h2>
+                    <select name="" id="gustosGelat">
+                        <option value="">-- Escull el gust --</option>
+                        <option value="1">Vainilla</option>
+                        <option value="2">Maduixa</option>
+                        <option value="3">Xocolata</option>
+                    </select>
+                </div>
+                <div id="saborGranitzat" style="display: none;">
+                    <h2>Escull el gust del granitzat:</h2>
+                    <select name="" id="gustosGranitzat">
+                        <option value="">-- Escull el gust --</option>
+                        <option value="1">Llimona</option>
+                        <option value="2">Taronja</option>
+                        <option value="3">Cafe</option>
+                    </select>
+                </div>
+                <div id="saborCrepDolca" style="display: none;">
+                    <h2>Escull el gust de la crep dolça:</h2>
+                    <select name="" id="gustosDolca">
+                        <option value="">-- Escull el gust --</option>
+                        <option value="1">Sucre</option>
+                        <option value="2">Nocilla</option>
+                    </select>
+                </div>
+                <div id="saborCrepSalada" style="display: none;">
+                    <h2>Escull el gust de la crep salada:</h2>
+                    <select name="" id="gustosSalada">
+                        <option value="">-- Escull el gust --</option>
+                        <option value="1">Pernil</option>
+                        <option value="2">Formatge</option>
+                        <option value="3">Xampinyons</option>
+                    </select>
+                </div>
+            </div>
+            <div class="col-lg-1 col-md-1 col-xs-12" id="fletxa3" style="display: none;">
+                    <img src="./flecha.jpg" alt="" srcset="">
+                </div>
+            <!-- pas 4 -->
+            <div class="col-lg-2 col-lg-pull-0 col-md-6 col-md-pull-6 col-xs-12">
+                <div id="toppingGelat" style="display: none;">
+                    <h2>Escull el topping del gelat:</h2>
+                    <select name="" id="superficieGelat">
+                        <option value="">-- Escull el topping --</option>
+                        <option value="1">Cirera</option>
+                        <option value="2">Xocolata</option>
+                        <option value="3">Sirope</option>
+                    </select>
+                </div>
+                <div id="toppingGranitzat" style="display: none;">
+                    <h2>Escull el topping del Granitzat:</h2>
+                    <select name="" id="superficieGranitzat">
+                        <option value="">-- Escull el topping --</option>
+                        <option value="1">Sombrilla</option>
+                        <option value="2">Palleta</option>
+                    </select>
+                </div>
+                <div id="toppingCrepDolca" style="display: none;">
+                    <h2>Escull el topping de la crep dolça:</h2>
+                    <select name="" id="superficieCrepDolca">
+                        <option value="">-- Escull el topping --</option>
+                        <option value="1">Nata</option>
+                        <option value="2">Xocolata</option>
+                    </select>
+                </div>
+                <div id="toppingCrepSalada" style="display: none;">
+                    <h2>Escull el topping de la crep salada:</h2>
+                    <select name="" id="superficieCrepSalada">
+                        <option value="">-- Escull el topping --</option>
+                        <option value="1">Orenga</option>
+                        <option value="2">Albaca</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $("#productes").change(function() {
+                var seleccio = $("#productes").val();
+                var  current_progress= 0;
+                switch(seleccio) {
+                    case '1':
+                        $('#fletxa1').show();
+                        current_progress = 25;
+                        $("#dynamic")
+                            .css("width", current_progress + "%")
+                            .attr("aria-valuenow", current_progress)
+                            .text(current_progress + "% Complete");
+                        $("#granitzat").hide();
+                        $("#crep").hide();
+                        $("#gelat").show();
+                        $("#tipusGelat").change(function(){
+                            $('#fletxa2').show();
+                            current_progress = 50;
+                            $("#dynamic")
+                                .css("width", current_progress + "%")
+                                .attr("aria-valuenow", current_progress)
+                                .text(current_progress + "% Complete");
+                            var seleccioGelat = $("#tipusGelat").val();
+                            if(seleccioGelat > 0) {
+                                $('#saborGelat').show();
+                                $("#gustosGelat").change(function() {
+                                    $('#fletxa3').show();
+                                    current_progress = 75;
+                                    $("#dynamic")
+                                        .css("width", current_progress + "%")
+                                        .attr("aria-valuenow", current_progress)
+                                        .text(current_progress + "% Complete");
+                                    var seleccioSaborGelat = $('#gustosGelat').val();
+                                    $('#toppingGelat').show();
+                                    $('#superficieGelat').change(function() {
+                                        current_progress = 100;
+                                        $("#dynamic")
+                                            .css("width", current_progress + "%")
+                                            .attr("aria-valuenow", current_progress)
+                                            .text(current_progress + "% Complete");
+                                    });
+                                });
+                            }
+                        });
+                        break;
+                    case '2': 
+                    $('#fletxa1').show();
+                    current_progress = 25;
+                                        $("#dynamic")
+                                            .css("width", current_progress + "%")
+                                            .attr("aria-valuenow", current_progress)
+                                            .text(current_progress + "% Complete");
+                        $("#gelat").hide();
+                        $("#crep").hide();
+                        $("#granitzat").show();
+                        $("#tipusGranitzat").change(function(){
+                            $('#fletxa2').show();
+                            current_progress = 50;
+                                        $("#dynamic")
+                                            .css("width", current_progress + "%")
+                                            .attr("aria-valuenow", current_progress)
+                                            .text(current_progress + "% Complete");
+                            var seleccioGranitzat = $("#tipusGranitzat").val();
+                            if(seleccioGranitzat > 0) {
+                                $('#saborGranitzat').show();
+                                $("#gustosGranitzat").change(function() {
+                                    $('#fletxa3').show();
+                                    current_progress = 75;
+                                        $("#dynamic")
+                                            .css("width", current_progress + "%")
+                                            .attr("aria-valuenow", current_progress)
+                                            .text(current_progress + "% Complete");
+                                    var seleccioSaborGranitzat = $('#gustosGranitzat').val();
+                                    $('#toppingGranitzat').show();
+                                    $('#superficieGranitzat').change(function() {
+                                        current_progress = 100;
+                                        $("#dynamic")
+                                            .css("width", current_progress + "%")
+                                            .attr("aria-valuenow", current_progress)
+                                            .text(current_progress + "% Complete");
+                                    });
+                                });
+                            }
+                        });
+                        break;
+                    case '3':
+                    $('#fletxa1').show();
+                    current_progress = 25;
+                        $("#dynamic")
+                            .css("width", current_progress + "%")
+                            .attr("aria-valuenow", current_progress)
+                            .text(current_progress + "% Complete");
+                        $("#gelat").hide();
+                        $("#granitzat").hide();
+                        $("#crep").show();
+                        $("#tipusCrep").change(function(){
+                            var seleccioCrep = $("#tipusCrep").val();
+                            if(seleccioCrep > "0") {
+                                if(seleccioCrep == "1") {
+                                    $('#fletxa2').show();
+                                    current_progress = 50;
+                                        $("#dynamic")
+                                            .css("width", current_progress + "%")
+                                            .attr("aria-valuenow", current_progress)
+                                            .text(current_progress + "% Complete");
+                                    $('#saborCrepDolca').show();
+                                    $("#gustosDolca").change(function() {
+                                        $('#fletxa3').show();
+                                        current_progress = 75;
+                                            $("#dynamic")
+                                                .css("width", current_progress + "%")
+                                                .attr("aria-valuenow", current_progress)
+                                                .text(current_progress + "% Complete");
+                                        var seleccioSaborDolc = $('#gustosDolca').val();
+                                        $('#toppingCrepDolca').show();
+                                        $('#toppingCrepDolca').change(function() {
+                                            current_progress = 100;
+                                            $("#dynamic")
+                                                .css("width", current_progress + "%")
+                                                .attr("aria-valuenow", current_progress)
+                                                .text(current_progress + "% Complete");
+                                        });
+                                    });
+                                } else {
+                                    $('#fletxa2').show();
+                                    $('#saborCrepSalada').show();
+                                    current_progress = 50;
+                                        $("#dynamic")
+                                            .css("width", current_progress + "%")
+                                            .attr("aria-valuenow", current_progress)
+                                            .text(current_progress + "% Complete");
+                                    $("#gustosSalada").change(function() {
+                                        $('#fletxa3').show();
+                                        current_progress = 75;
+                                            $("#dynamic")
+                                                .css("width", current_progress + "%")
+                                                .attr("aria-valuenow", current_progress)
+                                                .text(current_progress + "% Complete");
+                                        var seleccioSaborSalat = $('#gustosSalada').val();
+                                        $('#toppingCrepSalada').show();
+                                        $('#toppingCrepSalada').change(function() {
+                                            current_progress = 100;
+                                            $("#dynamic")
+                                                .css("width", current_progress + "%")
+                                                .attr("aria-valuenow", current_progress)
+                                                .text(current_progress + "% Complete");
+                                        });
+                                    });
+                                }
+                            }
+                        });
+                        break;
+                }   
+            });
+        });
+    </script>
+</body>
+</html>

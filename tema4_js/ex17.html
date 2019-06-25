@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="text1">
+    <input type="button" value="Apreta" onclick="mostraText();">
+    <div id="resultat"></div>
+    <script>
+        function mostraText() {
+            var cadena = document.getElementById('text1').value;
+            /*var posicio1 = cadena.indexOf("@");
+            var posicio2 = cadena.lastIndexOf(".");
+            var resultat = cadena.slice(posicio1+1, posicio2);
+            document.getElementById('resultat').innerHTML = "Domini: " + resultat;*/
+
+            //expresions regulars
+            /*var rex = /[a-z A-Z 0-9]@/;
+            console.log(rex.test(cadena));*/
+
+            /*
+            if (cadena.toLowerCase() == "abc") {
+                console.log("correcte");
+            } else {
+                console.log("incorrecte");
+            } */
+
+            //console.log(cadena.trim());
+
+            //console.log(cadena.replace("a", "@"));
+
+            var talls = cadena.split("a");
+            var junt = talls.join("-"); //ajunta tots els talls de l'array retornat per l'split i modifica per el caracter que vols
+            console.log(junt);
+        }
+    </script>
+</body>
+</html>

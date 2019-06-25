@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    div {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: relative;
+        float: left;
+        margin: 3px;
+    }
+    div:nth-child(4) {
+        background: blue;
+    }
+</style>
+<body>
+    <div id="capa1"></div>
+    <div id="capa2"></div>
+    <div id="capa3"></div>
+    <div>
+        <button id="boto_amagar">Amagar</button>
+    </div>
+    <script>
+        $(function() {
+            $("#boto_amagar").click(function(){
+                $("#capa1").toggle(1000);
+                $("#capa2").delay(1000).toggle(1000);
+                $("#capa3").delay(2000).toggle(1000);
+            });
+        });
+    </script>
+</body>
+</html>
