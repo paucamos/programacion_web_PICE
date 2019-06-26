@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../tema3_bootstrap/bootstrap-3.4.1-dist/css/bootstrap.css">
+</head>
+<body>
+    <div class="container">
+        <div class="progress">
+            <div class="progress-bar" style="width: 0%">
+                <span class="sr-only"> 0% </span>
+            </div>
+        </div>
+        <button id="barra">Incrementa la barra</button>
+    </div>
+    <script>
+        $(function() {
+            var increment = 0;
+            $('#barra').click(function() {
+                increment +=25;
+                $('.progress-bar').width(increment + '%').text(increment + '%');
+            });
+        });
+    </script>
+</body>
+</html>
