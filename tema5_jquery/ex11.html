@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../tema3_bootstrap/bootstrap-3.4.1-dist/css/bootstrap.css">
+</head>
+<style>
+    .row {
+        margin-top: 15px;
+    }
+
+    .menu {
+        user-select: none;
+        position: relative;
+        list-style: none;
+    }
+
+    .menu li {
+        width: 250px;
+        float: left;
+        margin: 10px;
+        display: block;
+        padding: 15px;
+    }
+
+    .menu li:hover {
+        background-color: grey;
+    }
+    img {
+        border-radius: 10px;
+        border: solid 1px black;
+    }
+    .miniatures {
+        width: 97px;
+        height: 97px;
+    }
+    .hivern {
+        background-image: url("../tema4_js/hivern.jpg");
+        font-family: fantasy;
+    }
+    .hivern div {
+        background: rgb(0,0,0,0.5);
+        color: white;
+    }
+    .primavera {
+        background-image: url("../tema4_js/primavera.jpg");
+        font-family: Arial, Helvetica, sans-serif;
+    }
+    .estiu {
+        background-image: url("../tema4_js/estiu.jpg");
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .tardor {
+        background-image: url("../tema4_js/tardor.jpg");
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+    }
+    .destacat_hivern {
+        color: black;
+        background-color: white;
+    }
+    .destacat_primavera {
+        color: white;
+        background-color: black;
+    }
+    .destacat_estiu {
+        color: black;
+        background-color: white;
+    }
+    .destacat_tardor {
+        color: black;
+        background-color: white;
+    }
+    .destacat_miniatura {
+        border: 4px solid red;
+    }
+    .miniatures:hover {
+        border: 2px solid blue;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <ul class="menu">
+                <li id="menuHivern">Hivern</li>
+                <li id="menuPrimavera">Primavera</li>
+                <li id="menuEstiu">Estiu</li>
+                <li id="menuTardor">Tardor</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="./miniatura1.jpg" alt="" id="resultat">
+            </div>
+            <div class="col-md-6">
+                <h1>Producte 1:</h1>
+                <p>ref. xxxx</p>
+                <p>Preu: 25€</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img src="./miniatura1.jpg" alt="" class="miniatures" id="miniatura1">
+                <img src="./miniatura2.png" alt="" class="miniatures" id="miniatura2">
+                <img src="./miniatura3.png" alt="" class="miniatures" id="miniatura3">
+                <img src="./miniatura4.jpg" alt="" class="miniatures" id="miniatura4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae iure, neque quos laboriosam commodi
+                maxime odio vitae pariatur. Eius animi, eos non quae iure excepturi. Inventore quia sint ut ex!
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel dicta aliquid recusandae explicabo
+                mollitia praesentium quae excepturi eius rem accusamus exercitationem, reiciendis pariatur quibusdam
+                dolore rerum nisi accusantium voluptates distinctio.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis nihil nam enim obcaecati facere
+                minus! Eos voluptatibus, minus modi voluptatem similique esse, accusantium, atque maxime impedit
+                veritatis ea placeat inventore.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut ab saepe reiciendis molestias quis
+                reprehenderit illo, minima quos tempora eum itaque. Et, fugiat? Delectus at, neque nemo rerum magnam
+                eos!
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, quis possimus illum est reprehenderit
+                ratione placeat laudantium, molestias minus ipsum provident veniam ipsa quae modi impedit magnam nam.
+                Maiores, quidem?
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            //canvis estils estacions
+            $('#menuHivern').click(function() {
+                $('body').removeClass('primavera'),
+                $('body').removeClass('estiu'),
+                $('body').removeClass('tardor'),
+                $('body').addClass('hivern'),
+                $('li').removeClass('destacat_primavera'),
+                $('li').removeClass('destacat_estiu'),
+                $('li').removeClass('destacat_tardor'),
+                $(this).addClass('destacat_hivern')
+            });
+            $('#menuPrimavera').click(function() {
+                $('body').removeClass('hivern'),
+                $('body').removeClass('estiu'),
+                $('body').removeClass('tardor'),
+                $('body').addClass('primavera'),
+                $('li').removeClass('destacat_hivern'),
+                $('li').removeClass('destacat_estiu'),
+                $('li').removeClass('destacat_tardor'),
+                $(this).addClass('destacat_primavera')
+            });
+            $('#menuEstiu').click(function() {
+                $('body').removeClass('hivern'),
+                $('body').removeClass('primavera'),
+                $('body').removeClass('tardor'),
+                $('body').addClass('estiu'),
+                $('li').removeClass('destacat_hivern'),
+                $('li').removeClass('destacat_primavera'),
+                $('li').removeClass('destacat_tardor'),
+                $(this).addClass('destacat_estiu')
+            });
+            $('#menuTardor').click(function() {
+                $('body').removeClass('hivern'),
+                $('body').removeClass('primavera'),
+                $('body').removeClass('estiu'),
+                $('body').addClass('tardor'),
+                $('li').removeClass('destacat_hivern'),
+                $('li').removeClass('destacat_primavera'),
+                $('li').removeClass('destacat_estiu'),
+                $(this).addClass('destacat_tardor')
+            });
+
+            //canvis miniatura
+            $('#miniatura1').click(function() {
+                $("#resultat").attr("src", "./miniatura1.jpg");
+                $('.miniatures').removeClass('destacat_miniatura');
+                $(this).addClass('destacat_miniatura');
+            });
+            $('#miniatura2').click(function() {
+                $("#resultat").attr("src", "./miniatura2.png");
+                $('.miniatures').removeClass('destacat_miniatura');
+                $(this).addClass('destacat_miniatura');
+            });
+            $('#miniatura3').click(function() {
+                $("#resultat").attr("src", "./miniatura3.png");
+                $('.miniatures').removeClass('destacat_miniatura');
+                $(this).addClass('destacat_miniatura');
+            });
+            $('#miniatura4').click(function() {
+                $("#resultat").attr("src", "./miniatura4.jpg");
+                $('.miniatures').removeClass('destacat_miniatura');
+                $(this).addClass('destacat_miniatura');
+            });
+        });
+    </script>
+</body>
+
+</html>

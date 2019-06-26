@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    div {
+        position: relative;
+        float: left;
+        width: 300px;
+        height: 300px;
+        margin: 5px;
+        background-color: red;
+    }
+</style>
+<body>
+    <div id="capa1"></div>
+    <div id="capa2"></div>
+    <div id="capa3"></div>
+    <div id="capa4"></div>
+    <div id="capa5"></div>
+    <div id="capa6"></div>
+    <div id="capa7"></div>
+    <button id="botoanimar">Animar</button>
+    <script>
+        $(function() {
+            $('#botoanimar').click(function() {
+                /*
+                    $('#capa1').hide(1000); //amaga
+                    $('#capa2').fadeOut(1000); //desapareix
+                    $('#capa3').fadeToggle(1000); //va cambian
+                    $('#capa4').fadeTo(1000, 0.5); //es queda a una opacitat determinada del segon parametre
+                    $('#capa5').slideUp(1000); //es plega cap amunt
+                    $('#capa6').slideDown(1000); //va cambian
+                    $('#capa7').slideToggle(1000); //va cambian
+                */
+                //$('#capa1').animate({width: "350px"}, 1000);
+                $('#capa1').animate({
+                    width: "+=350px" //primer anima aquesta
+                },1000).animate({
+                    height: "350px" //quan acaba la primera passa a aquesta
+                },1000);
+
+            });
+        });
+    </script>
+</body>
+</html>

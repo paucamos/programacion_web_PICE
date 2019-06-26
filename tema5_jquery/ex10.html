@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    .destacat {
+        color: red;
+    }
+</style>
+<body>
+    <ul>
+        <li>Article 1</li>
+        <li>Article 2</li>
+        <li>Article 3</li>
+        <li>Article 4</li>
+    </ul>
+    <script>
+        $(function () {
+            $('li').click(function() {
+                $("li").removeClass("destacat");
+                $(this).addClass("destacat"); //selecciona l'element que s'ha apretat
+            });
+        });
+    </script>
+</body>
+
+</html>

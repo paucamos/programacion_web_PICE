@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../tema3_bootstrap/bootstrap-3.4.1-dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <button id="btn1">3c</button>
+            </div>
+            <div class="col-md-4">
+                <button id="btn2">2c</button>
+            </div>
+            <div class="col-md-4">
+                <button id="btn3">1c</button>
+            </div>
+        </div>
+        <div class="row" id="article">
+            <div class="col-md-4">
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe libero sunt vitae esse nemo perspiciatis
+                similique nulla, itaque earum, harum veniam? Aut culpa ipsa corporis quos quasi doloribus reiciendis
+                libero?
+            </div>
+            <div class="col-md-4">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid dicta alias praesentium voluptate illo,
+                eius blanditiis, rerum totam adipisci delectus explicabo et similique temporibus ullam recusandae earum
+                maxime, iure tempore!
+            </div>
+            <div class="col-md-4">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci vel rem, minus, totam cum provident
+                ullam beatae magni et architecto sed voluptate vero facere illo itaque, repellendus veritatis sapiente
+                in?
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            $('#btn1').click(function () {
+                $('#article div').removeClass('col-md-6');
+                $('#article div').removeClass('col-md-12');
+                $('#article div').addClass('col-md-4');
+
+            });
+            $('#btn2').click(function () {
+                $('#article div').removeClass('col-md-4');
+                $('#article div').removeClass('col-md-12');
+                $('#article div').addClass('col-md-6');
+
+            });
+            $('#btn3').click(function () {
+                $('#article div').removeClass('col-md-4');
+                $('#article div').removeClass('col-md-6');
+                $('#article div').addClass('col-md-12');
+
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <link rel="stylesheet" href="../tema3_bootstrap/bootstrap-3.4.1-dist/css/bootstrap.css">
+</head>
+<style>
+    .row {
+        margin-top: 15px;
+    }
+
+    .menu {
+        user-select: none;
+        position: relative;
+        list-style: none;
+    }
+
+    .menu li {
+        width: 250px;
+        float: left;
+        margin: 10px;
+        display: block;
+        padding: 15px;
+    }
+
+    .menu li:hover {
+        background-color: grey;
+    }
+
+    img {
+        border-radius: 10px;
+        border: solid 1px black;
+    }
+
+    .miniatures {
+        width: 97px;
+        height: 97px;
+    }
+
+    .hivern {
+        background-image: url("../tema4_js/hivern.jpg");
+        font-family: fantasy;
+    }
+
+    .hivern div {
+        background: rgb(0, 0, 0, 0.5);
+        color: white;
+    }
+
+    .primavera {
+        background-image: url("../tema4_js/primavera.jpg");
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .estiu {
+        background-image: url("../tema4_js/estiu.jpg");
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+
+    .tardor {
+        background-image: url("../tema4_js/tardor.jpg");
+        color: white;
+        font-family: 'Courier New', Courier, monospace;
+    }
+
+    .destacat_hivern {
+        color: black;
+        background-color: white;
+    }
+
+    .destacat_primavera {
+        color: white;
+        background-color: black;
+    }
+
+    .destacat_estiu {
+        color: black;
+        background-color: white;
+    }
+
+    .destacat_tardor {
+        color: black;
+        background-color: white;
+    }
+
+    .destacat_miniatura {
+        border: 4px solid red;
+    }
+
+    .miniatures:hover {
+        border: 2px solid blue;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <ul class="menu">
+                <li id="menuHivern">Hivern</li>
+                <li id="menuPrimavera">Primavera</li>
+                <li id="menuEstiu">Estiu</li>
+                <li id="menuTardor">Tardor</li>
+            </ul>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <img src="" alt="" id="resultat">
+            </div>
+            <div class="col-md-6">
+                <h1 id="titolProd"> - </h1>
+                <p id="refProd"> - </p>
+                <p id="preuProd"> - </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <img src="" alt="" class="miniatures" id="miniatura1">
+                <img src="" alt="" class="miniatures" id="miniatura2">
+                <img src="" alt="" class="miniatures" id="miniatura3">
+                <img src="" alt="" class="miniatures" id="miniatura4">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <p id="descProd"></p>
+            </div>
+        </div>
+    </div>
+    <script>
+        $(function () {
+            //canvis estils estacions
+            $('#menuHivern').click(function () {
+                $('body').removeClass('primavera'),
+                    $('body').removeClass('estiu'),
+                    $('body').removeClass('tardor'),
+                    $('body').addClass('hivern'),
+                    $('li').removeClass('destacat_primavera'),
+                    $('li').removeClass('destacat_estiu'),
+                    $('li').removeClass('destacat_tardor'),
+                    $(this).addClass('destacat_hivern')
+                $('#titolProd').load("hivern.html #titol");
+                $('#refProd').load("hivern.html #ref");
+                $('#preuProd').load("hivern.html #preu");
+                $('#descProd').load("hivern.html #desc");
+                //
+                $("#menuHivern").load("hivern", function (respostaTxt, statusTxt, xhr) {
+                    if (statusTxt == "success") {
+                        console.log(respostaTxt);
+                    }
+                    if (statusTxt == "error") {
+                        console.log("Error:" + xhr.statusText);
+                    }
+                });
+            });
+            $('#menuPrimavera').click(function () {
+                $('body').removeClass('hivern'),
+                    $('body').removeClass('estiu'),
+                    $('body').removeClass('tardor'),
+                    $('body').addClass('primavera'),
+                    $('li').removeClass('destacat_hivern'),
+                    $('li').removeClass('destacat_estiu'),
+                    $('li').removeClass('destacat_tardor'),
+                    $(this).addClass('destacat_primavera')
+                $('#titolProd').load("primavera.html #titol");
+                $('#refProd').load("primavera.html #ref");
+                $('#preuProd').load("primavera.html #preu");
+                $('#descProd').load("primavera.html #desc");
+            });
+            $('#menuEstiu').click(function () {
+                $('body').removeClass('hivern'),
+                    $('body').removeClass('primavera'),
+                    $('body').removeClass('tardor'),
+                    $('body').addClass('estiu'),
+                    $('li').removeClass('destacat_hivern'),
+                    $('li').removeClass('destacat_primavera'),
+                    $('li').removeClass('destacat_tardor'),
+                    $(this).addClass('destacat_estiu')
+                $('#titolProd').load("estiu.html #titol");
+                $('#refProd').load("estiu.html #ref");
+                $('#preuProd').load("estiu.html #preu");
+                $('#descProd').load("estiu.html #desc");
+            });
+            $('#menuTardor').click(function () {
+                $('body').removeClass('hivern'),
+                    $('body').removeClass('primavera'),
+                    $('body').removeClass('estiu'),
+                    $('body').addClass('tardor'),
+                    $('li').removeClass('destacat_hivern'),
+                    $('li').removeClass('destacat_primavera'),
+                    $('li').removeClass('destacat_estiu'),
+                    $(this).addClass('destacat_tardor')
+                $('#titolProd').load("tardor.html #titol");
+                $('#refProd').load("tardor.html #ref");
+                $('#preuProd').load("tardor.html #preu");
+                $('#descProd').load("tardor.html #desc");
+            });
+
+            //canvis miniatura
+            $('#miniatura1').click(function () {
+                $("#resultat").attr("src", "./miniatura1.jpg");
+                $('.miniatures').removeClass('destacat_miniatura');
+                $(this).addClass('destacat_miniatura');
+            });
+            $('#miniatura2').click(function () {
+                $("#resultat").attr("src", "./miniatura2.png");
+                $('.miniatures').removeClass('destacat_miniatura');
+                $(this).addClass('destacat_miniatura');
+            });
+            $('#miniatura3').click(function () {
+                $("#resultat").attr("src", "./miniatura3.png");
+                $('.miniatures').removeClass('destacat_miniatura');
+                $(this).addClass('destacat_miniatura');
+            });
+            $('#miniatura4').click(function () {
+                $("#resultat").attr("src", "./miniatura4.jpg");
+                $('.miniatures').removeClass('destacat_miniatura');
+                $(this).addClass('destacat_miniatura');
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    #contingut {
+        width: 300px;
+        height: 200px;
+        background: black;
+        color: white;
+        padding: 10px;
+    }
+</style>
+
+<body>
+    <div id="contingut">
+        <div id="titular"></div>
+        <div id="desc">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolores nisi accusantium minus ipsum qui,
+                possimus est ullam blanditiis alias, soluta mollitia error architecto fugiat doloremque esse rerum consequuntur
+                voluptatibus.
+        </div>
+    </div>
+    <button id="carrega">Carrega</button>
+    <script>
+        $(function () {
+            $('#carrega').click(function () {
+                $('#titular').load(
+                    "./dades.html #titular"
+                );
+                $('#desc').load(
+                    "./dades.html #descripcio"
+                ); //carrega elements al div d'un altre fitxer extern (partial) i es pot seleccionar amb el id el conteingut a mostrar
+            });
+        });
+    </script>
+</body>
+
+</html>

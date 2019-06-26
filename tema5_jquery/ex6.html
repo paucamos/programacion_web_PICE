@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    .elements {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        bottom: 0px;
+    }
+
+    #caixa1 {
+        background-size: 400px 400px;
+        background-image: url('./logo.jpg');
+        background-position: top left;
+    }
+
+    #caixa2 {
+        background-size: 400px 400px;
+        background-image: url('./logo.jpg');
+        background-position: top right;
+        margin-left: 250px;
+    }
+
+    #caixa3 {
+        background-size: 400px 400px;
+        background-image: url('./logo.jpg');
+        background-position: bottom left;
+        margin-left: 500px;
+    }
+
+    #caixa4 {
+        background-size: 400px 400px;
+        background-image: url('./logo.jpg');
+        background-position: bottom right;
+        margin-left: 750px;
+    }
+</style>
+
+<body>
+
+    <div class="elements" id="caixa1"></div>
+    <div class="elements" id="caixa2"></div>
+    <div class="elements" id="caixa3"></div>
+    <div class="elements" id="caixa4"></div>
+
+    <script>
+        $(function () {
+            //animacio directe
+            $('#caixa1').animate({
+                bottom: "300px"
+            }, 1000).animate({
+                right: "100px"
+            }, 1000).animate({
+                top: "0px"
+            }, 1000).animate({
+                left: "0px"
+            });
+
+            $('#caixa2').delay(1200).animate({
+                bottom: "300px"
+            }, 1000).animate({
+                right: "100px"
+            }, 1000).animate({
+                top: "0px"
+            }, 1000).animate({
+                marginLeft: "0px",
+                left: "200px"
+            });
+
+            $('#caixa3').delay(2500).animate({
+                bottom: "300px"
+            }, 1000).animate({
+                right: "100px"
+            }, 1000).animate({
+                top: "200px"
+            }, 1000).animate({
+                marginLeft: "0px",
+                left: "0px"
+            });
+
+            $('#caixa4').delay(4700).animate({
+                bottom: "300px"
+            }, 1000).animate({
+                right: "100px"
+            }, 1000).animate({
+                top: "200px"
+            }, 1000).animate({
+                marginLeft: "0px",
+                left: "200px"
+            });
+
+            //Animacio inversa
+
+            $('#caixa1').delay(7000).animate({
+                left: "900px"
+            }, 1000).animate({
+                top: "600px"
+            }, 1000).animate({
+                left: "0px"
+            }, 1000).animate({
+                bottom: "0px"
+            });
+
+            $('#caixa2').delay(7300).animate({
+                left: "900px"
+            }, 1000).animate({
+                top: "600px"
+            }, 1000).animate({
+                left: "250px"
+            }, 1000).animate({
+                bottom: "0px"
+            });
+
+            $('#caixa3').delay(7500).animate({
+                left: "900px"
+            }, 1000).animate({
+                top: "600px"
+            }, 1000).animate({
+                left: "500px"
+            }, 1000).animate({
+                bottom: "0px"
+            });
+
+            $('#caixa4').delay(7900).animate({
+                left: "900px"
+            }, 1000).animate({
+                top: "600px"
+            }, 1000).animate({
+                left: "750px"
+            }, 1000).animate({
+                bottom: "0px"
+            });
+        });
+    </script>
+</body>
+
+</html>

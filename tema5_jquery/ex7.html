@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <h1>Titol exemple:</h1>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe mollitia, architecto molestias nisi quia totam provident illum dolorum eum aspernatur corporis expedita dolore enim velit sunt quo omnis, debitis excepturi.
+    </p>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis non a, eveniet explicabo, error odio et accusantium est rem natus consectetur qui incidunt perspiciatis, repellat libero quae tempore dolore sint.
+    </p>
+    <button id="canviar">Canviar</button>
+    <button id="canviar2">Canviar2</button>
+    <script>
+        $(function() {
+            $('#canviar').click(function() {
+                $("h1").css({color: "red"}); //canvia propietats de css
+                $("p").css("color", "blue"); //si nomes canvia una propietat no fa falta posar les claus
+            });
+            $('#canviar2').click(function() {
+                if($("h1").css("color") == "rgb(0, 0, 0)") {
+                    $("h1").css("color","red");
+                } else {
+                    $("h1").css("color" , "blue");
+                }
+            });
+        });
+    </script>
+</body>
+</html>
