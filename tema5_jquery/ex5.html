@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <script src="./jquery-3.4.1.min.js"></script>
     <link rel="stylesheet" href="../tema3_bootstrap/bootstrap-3.4.1-dist/css/bootstrap.css">
 </head>
+
 <body>
     <div class="container">
         <div class="progress">
@@ -18,13 +20,27 @@
         <button id="barra">Incrementa la barra</button>
     </div>
     <script>
-        $(function() {
+        $(function () {
             var increment = 0;
-            $('#barra').click(function() {
-                increment +=25;
-                $('.progress-bar').width(increment + '%').text(increment + '%');
+            var contador = 0;
+            $('#barra').click(function () {
+                contador += 1;
+                if (contador == 1) {
+                    increment = 25;
+                    $('.progress-bar').width(increment + '%').text(increment + '%');
+                } else if (contador == 2) {
+                    increment = 50;
+                    $('.progress-bar').width(increment + '%').text(increment + '%');
+                } else if (contador == 3) {
+                    increment = 75;
+                    $('.progress-bar').width(increment + '%').text(increment + '%');
+                } else {
+                    increment = 100;
+                    $('.progress-bar').width(increment + '%').text(increment + '%');
+                }
             });
         });
     </script>
 </body>
+
 </html>
