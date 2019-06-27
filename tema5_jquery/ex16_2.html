@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <table id="taula" border="1">
+        <tr>
+            <th>Adreça</th>
+            <th>Lat-Long</th>
+            <th>Capacitat</th>
+        </tr>
+    </table>
+    <button id="carrega">Carrega dades</button>
+    <script>
+        $(function(){
+            $('#carrega').click(function() {
+                $.ajax({
+                    url: "./dadesBcn.json",
+                    method: "get",
+                    dataType: 'json',
+                    success: function(data, status){
+                        var dades = data.data;
+                        $.each(dades.stations, function( i, item){              
+                            $('#taula').append('<tr><td>'+dades.stations[i].address +'</td><td><a href="https://www.google.es/maps/@'+ dades.stations[i].lat+","+ dades.stations[i].lon +',20z">'+ dades.stations[i].lat + "/" + dades.stations[i].lon +'</a></td><td>'+ dades.stations[i].capacity +'</td></tr>');
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

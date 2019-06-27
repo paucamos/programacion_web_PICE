@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+
+<body>
+    <p>Nom:</p>
+    <p id="nomProd"></p>
+    <p>Preu: </p>
+    <p id="preuProd"></p>
+    <button id="carregar">Carregar</button>
+    <script>
+        $(function () {
+            $('#carregar').click(function () {
+                $.ajax({
+                    url: './dades2.json',
+                    method: 'get',
+                    dataType: 'json',
+
+                    success: function (data, status) {
+                        /*
+                            $('#nomProd').html(data.nom);
+                            $('#preuProd').html(data.preu + "€");
+                        */
+                        $.each(data, function (i, item) { //bucle de ajax
+                            console.log(data[i].nom + " Preu: " + data[i].preu + "€");
+                        });
+                    },
+                    error: function (status) {
+                        
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

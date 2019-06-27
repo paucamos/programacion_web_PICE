@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <table id="taula" border="1">
+        <tr>
+            <th>Adreça</th>
+            <th>Horari</th>
+            <th>Tarifes</th>
+            <th>Acces</th>
+        </tr>
+    </table>
+    <button id="carrega">Carrega les dades</button>
+    <script>
+        $(function() {
+            $('#carrega').click(function() {
+                $.ajax({
+                    url: "./dadesBcn2.json",
+                    method: "get",
+                    dataType: "json",
+                    success: function(data, success) {
+                        var parkings = data.ParkingList.Parking;
+                        var cadena = "";
+                        $.each(parkings, function(i, item) {
+                            var preuParking = item.ParkingPriceList.Price;
+                            var accesParking = item.ParkingAccess.Access;
+                            cadena += '<tr>'
+                                + '<td>' + item.Address+ '</td>'
+                                + '<td>' + item.Open + " / " + item.Close + '</td>';
+                                cadena +='<td>';
+                                        cadena += '<ul>';
+                                            if($.isArray(preuParking)) {
+                                                $.each(preuParking, function(j, jItem) {
+                                                        cadena += '<li>' + jItem.VehicleType + '</li>'
+                                                        cadena += '<li>' + jItem.Amount + '</li>';
+                                                        
+                                                });
+                                            } else {
+                                                cadena += '<li>' + item.ParkingPriceList.Price.Amount + '</li>';
+                                            }
+                                    cadena += '</ul>';
+                                cadena += '</td>';
+                                //acces parking
+                                cadena +='<td>';
+                                        cadena += '<ul>';
+                                            if($.isArray(accesParking)) {
+                                                $.each(accesParking, function(k, kItem) {
+                                                    var urlMapa = "https://www.google.es/maps/@"+kItem.Latitude+"," + kItem.Longitude + ",20z";
+                                                    cadena += '<li><a href="'+ urlMapa +'">' + kItem.AccessAddress + '</a></li>';
+                                                });
+                                            } else {
+                                                var urlMapa = "https://www.google.es/maps/@"+accesParking.Latitude+"," + accesParking.Longitude + ",20z";
+                                                cadena += '<li><a href="'+ urlMapa +'">' + accesParking.AccessAddress + '</a></li>';
+                                            }
+                                    cadena += '</ul>';
+                                cadena += '</td>';
+                        cadena += '</tr>';
+                            $('#taula').append(cadena);  
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
