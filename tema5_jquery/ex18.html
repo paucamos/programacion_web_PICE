@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+</head>
+<style>
+    #resposta {
+        width: 600px;
+        height: 500px;
+        background-color: rgb(97, 97, 97);
+        color: white;
+        font-family: Helvetica;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    #imgUser,
+    #imgUser img {
+        width: 100%;
+        height: auto;
+        margin: 0;
+        position: relative;
+        border-radius: 10px;
+    }
+
+    #infoUsuari {
+        position: relative;
+        float: left;
+        width: 300px;
+    }
+
+    .row {
+        width: 50%;
+        height: 100%;
+        position: relative;
+        float: left;
+        margin: 5px;
+    }
+
+    .reposContainer {
+        padding: 5px;
+        border: 1px dotted black;
+        font-family: Helvetica;
+        border-radius: 10px;
+        width: 300px;
+        height: 155px;
+        float: left;
+        margin: 5px;
+    }
+
+    .reposContainer img {
+        width: 100px;
+        border-radius: 10px;
+    }
+
+    .nomRepo {
+        font-size: 20px;
+        margin-top: -30px;
+    }
+    .imatgeRepo {
+        position: relative;
+        width: 50%;
+        margin: 0px;
+        float: left;
+    }
+    .propietariRepo {
+        position: relative;
+        width: 50%;
+        float: left;
+
+    }
+</style>
+
+<body>
+    <div>
+        <label for="usuari">Usuari: </label>
+        <input type="text" name="usuari" id="usuari">
+        <input type="button" value="Buscar" id="btn-buscar">
+        <input type="button" value="Buscar repos" id="btn-repos">
+    </div>
+    <div id="resposta">
+        <div class="row">
+            <div id="imgUser"></div>
+        </div>
+        <div class="row">
+            <div id="infoUsuari">
+                <p id="nomUsuari"></p>
+                <p id="seguidors"></p>
+                <p id="seguits"></p>
+                <p id="repos"></p>
+            </div>
+        </div>
+
+    </div>
+    <div id="repositoris"></div>
+    <script>
+        $(function () {
+            $('#btn-buscar').click(function () {
+                var nom = $('#usuari').val();
+                $.ajax({
+                    url: "https://api.github.com/users/" + nom +
+                        "?client_id=4f6b034e1c8c03db67c9&client_secret=f7b719c0efe29badc11466ddf812b4a4de0c0c0d",
+                    method: "GET", //sempre majuscula els verbs
+                    dataType: "json",
+                    success: function (data, status) {
+                        $('#imgUser').html("<img src='" + data.avatar_url + "'>");
+                        $('#nomUsuari').html("<h1>" + data.name + "</h1>");
+                        $('#seguidors').html("Seguidors: " + data.followers);
+                        $('#seguits').html("Seguits: " + data.following);
+                        $('#repos').html("Repositoris públics: " + data.public_repos);
+                    },
+                    error: function () {
+                        console.log('Error');
+                    }
+                });
+            });
+            $('#btn-repos').click(function () {
+                var nom = $('#usuari').val();
+                var link = "https://api.github.com/users/" + nom +
+                    "/repos?client_id=4f6b034e1c8c03db67c9&client_secret=f7b719c0efe29badc11466ddf812b4a4de0c0c0d";
+                var cadena = "";
+                $.ajax({
+                    url: link,
+                    method: "GET",
+                    dataType: "json",
+                    success: function (data, status) {
+                        $.each(data, function (i, item) {
+                            cadena += "<div class='reposContainer'>";
+                                cadena += "<div class='nomRepo'>"
+                                    cadena += "<h2>" + item.name + "</h2>";
+                                cadena += "</div>";
+                                cadena += "<div class='imatgeRepo'>";
+                                    cadena += "<img src='" + item.owner.avatar_url + "'>";
+                                cadena += "</div>";
+                                cadena += "<div class='propietariRepo'>";
+                                    cadena += item.owner.login;
+                                cadena += "</div>";
+                            cadena += "</div>";
+                        });
+                        $('#repositoris').html(cadena);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

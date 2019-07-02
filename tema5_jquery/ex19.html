@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="./jquery-3.4.1.min.js"></script>
+    <script src="https://kit.fontawesome.com/15b5d03a5a.js"></script>
+</head>
+<style>
+    body {
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-family: 'Open Sans', sans-serif;
+    }
+    #resultat {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        grid-gap: 1rem;
+        width: 100%;
+    }
+    #resultat .post {
+        box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        color: #777;
+        display: flex;
+        flex-direction: column;
+    }
+    .imatges {
+        position: relative;
+        float: left;
+        margin: 5px;
+        width: 300px;
+    }
+
+    .imatges img {
+        min-height: 20rem;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+        display: block;
+    }
+    .top-bar {
+        padding: 0.5rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    .picture {
+        background-size: cover;
+        background-position: center;
+        height: 1.5rem;
+        width: 1.5rem;
+        border-radius: 100%;
+        margin-right: 0.5rem;
+    }
+    h6 {
+        display: block;
+        font-size: 0.67em;
+        margin-block-start: 2.33em;
+        margin-block-end: 2.33em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+        font-weight: bold;
+    }
+</style>
+
+<body>
+    <label for="etiqueta">Etiqueta: </label>
+    <input type="text" id="etiqueta" name="etiqueta">
+    <input type="button" value="Retorna" id="retorna">
+    <div id="resultat"></div>
+    <script>
+        $(function () {
+            $('#retorna').click(function () {
+                var cadena = "";
+                var imatge = "";
+                var etiqueta = $('#etiqueta').val();
+                var link =
+                    "https://www.flickr.com/services/rest/?method=flickr.photos.search&api_key=d596b890fadcfa48e1e8411e53940821&tags=" +
+                    etiqueta + "&format=json&nojsoncallback=1";
+                $.ajax({
+                    url: link,
+                    method: "GET",
+                    dataType: "json",
+                    success: function (data, status) {
+                        console.log(data);
+                        $.each(data, function (i, item) {
+                            $.each(item.photo, function (j, jitem) {
+                                cadena += "<div class='post'>";
+                                    cadena += "<div class='top-bar'>";
+                                        cadena += "<div class='picture'>";
+                                            cadena += "<img src=''>";
+                                        cadena += "</div>";
+                                        cadena += "<div class='username'>";
+                                            cadena += "<h6> UsuariTal </h6>";
+                                        cadena += "</div>";
+                                    cadena += "</div>";
+                                    cadena += "<div class='imatges'>";
+                                        cadena += jitem.title;
+                                        cadena += "<img src='https://farm" + jitem
+                                            .farm + ".staticflickr.com/" + jitem
+                                            .server + "/" +
+                                            jitem.id + "_" + jitem.secret + ".jpg'>";
+                                    cadena += "</div>";
+                                    cadena += "<div>";
+                                        cadena += '<i class="far fa-heart"></i>';
+                                        cadena+= '<i class="far fa-comment"></i>';
+                                    cadena += "</div>";
+                                cadena += "</div>";
+                            });
+                        });
+                        $('#resultat').html(cadena);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
