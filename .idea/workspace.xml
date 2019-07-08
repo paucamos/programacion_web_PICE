@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="11c292ec-8613-4bab-8f3e-13b19b3b0d1e" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/programacion_web_PICE.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/tema6_php/bd/ex10.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tema6_php/bd/ex9.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tema6_php/bd/ex9_eliminar.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tema4_js/ex1.html" beforeDir="false" afterPath="$PROJECT_DIR$/tema4_js/ex1.html" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,13 +17,16 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="programacion_web_PICE" />
+  </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tema4_js/ex1.html">
+        <entry file="file://$PROJECT_DIR$/tema6_php/bd/ex10.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+            <state relative-caret-position="255">
+              <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
             </state>
           </provider>
         </entry>
@@ -63,13 +63,16 @@
         <option value="$PROJECT_DIR$/tema2_css/pau_camos_examen.html" />
         <option value="$PROJECT_DIR$/tema2_css/pau_camos_examen.css" />
         <option value="$PROJECT_DIR$/tema4_js/ex1.html" />
+        <option value="$PROJECT_DIR$/tema6_php/bd/ex9.php" />
+        <option value="$PROJECT_DIR$/tema6_php/bd/ex9_eliminar.php" />
+        <option value="$PROJECT_DIR$/tema6_php/bd/ex10.php" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
-    <option name="width" value="1920" />
-    <option name="height" value="1097" />
+    <option name="width" value="1172" />
+    <option name="height" value="1337" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -89,7 +92,13 @@
             <path>
               <item name="programacion_web_PICE" type="b2602c69:ProjectViewProjectNode" />
               <item name="programacion_web_PICE" type="462c0819:PsiDirectoryNode" />
-              <item name="tema4_js" type="462c0819:PsiDirectoryNode" />
+              <item name="tema6_php" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="programacion_web_PICE" type="b2602c69:ProjectViewProjectNode" />
+              <item name="programacion_web_PICE" type="462c0819:PsiDirectoryNode" />
+              <item name="tema6_php" type="462c0819:PsiDirectoryNode" />
+              <item name="bd" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -130,12 +139,15 @@
       <updated>1562569966889</updated>
       <workItem from="1562569970270" duration="2250000" />
       <workItem from="1562584738220" duration="92000" />
-      <workItem from="1562584841508" duration="182000" />
+      <workItem from="1562584841508" duration="1763000" />
+      <workItem from="1562590923028" duration="7000" />
+      <workItem from="1562591035810" duration="694000" />
+      <workItem from="1562610341838" duration="298000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12900000" />
+    <option name="totallyTimeSpent" value="15480000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -147,12 +159,12 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1920" height="1097" extended-state="0" />
+    <frame x="0" y="23" width="3440" height="1337" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.122470714" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info id="Favorites" order="2" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49950248" visible="true" weight="0.0700412" />
+      <window_info id="Structure" order="1" sideWeight="0.5004975" side_tool="true" weight="0.122470714" />
+      <window_info id="Favorites" order="2" sideWeight="0.5004975" side_tool="true" weight="0.122470714" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -161,8 +173,8 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32935324" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.22686568" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.22189055" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="11" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -250,8 +262,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tema4_js/ex1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="8" selection-start-line="18" selection-start-column="8" selection-end-line="18" selection-end-column="8" />
+        <state relative-caret-position="255">
+          <caret line="17" column="13" lean-forward="true" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tema6_php/bd/ex9_eliminar.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="32" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tema6_php/bd/ex9.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tema6_php/bd/ex10.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="22" column="94" selection-start-line="22" selection-start-column="94" selection-end-line="22" selection-end-column="94" />
         </state>
       </provider>
     </entry>
