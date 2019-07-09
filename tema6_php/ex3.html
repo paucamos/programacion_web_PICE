@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="jquery-ui-1.12.1/jquery-ui.css">
+    <script src="../tema5_jquery/jquery-3.4.1.min.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.js"></script>
+</head>
+<style>
+    #red, #green, #blue {
+        float: left;
+        clear: left;
+        width: 300px;
+        margin: 15px;
+    }
+    #resultat {
+        width: 120px;
+        height: 100px;
+        margin-top: 18px;
+        margin-left: 350px;
+        background-image: none;
+    }
+
+</style>
+<body>
+    <p class="ui-state-default ui-corner-all ui-helper-clearfix" style="padding:4px;">
+        <span class="ui-icon ui-icon-pencil" style="float:left; margin:-2px 5px 0 0;"></span>
+        Escull un color
+    </p>
+
+    <div id="red"></div>
+    <div id="green"></div>
+    <div id="blue"></div>
+
+    <div id="resultat" class="ui-widget-content ui-corner-all"></div>
+    <div id="hex"></div>
+<script>
+    $(function() {
+        var red = 0;
+        var green = 0;
+        var blue = 0;
+        var cadenaRed = "";
+        var cadenaGreen = "";
+        var cadenaBlue = "";
+        $("#red").slider({
+            range: "min",
+            min: 0, // min value
+            max: 255, // max value
+            step: 0.1,
+            value: 0, // default value of slider
+            slide: function(event, ui) {
+                red = ui.value;
+                $('#resultat').css("background-color", "rgb(" + red +","+ green +","+ blue + ")");
+                var redHex = red.toString(16);
+                var res = redHex.split(".");
+                cadenaRed = res[0];
+                $('#hex').html("#" + cadenaRed + cadenaGreen + cadenaBlue);
+            }
+        });
+        $("#green").slider({
+            range: "min",
+            min: 0, // min value
+            max: 255, // max value
+            step: 0.1,
+            value: 0, // default value of slider
+            slide: function(event, ui) {
+                green = ui.value;
+                $('#resultat').css("background-color", "rgb(" + red +","+ green +","+ blue + ")");
+                var greenHex = green.toString(16);
+                var res = greenHex.split(".");
+                cadenaGreen = res[0];
+                $('#hex').html("#" + cadenaRed + cadenaGreen + cadenaBlue);
+            }
+        });
+        $("#blue").slider({
+            range: "min",
+            min: 0, // min value
+            max: 255, // max value
+            step: 0.1,
+            value: 0, // default value of slider
+            slide: function(event, ui) {
+                blue = ui.value;
+                $('#resultat').css("background-color", "rgb(" + red +","+ green +","+ blue + ")");
+                var blueHex = blue.toString(16);
+                var res = blueHex.split(".");
+                cadenaBlue = res[0];
+                $('#hex').html("#" + cadenaRed + cadenaGreen + cadenaBlue);
+            }
+        });
+    } );
+</script>
+</body>
+</html>

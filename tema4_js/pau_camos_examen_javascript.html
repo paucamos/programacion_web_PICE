@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="result"></div>
+    <script>
+        var cadena = "";
+        var i = 0;
+        cadena += "<table border='1'>";
+        cadena += "<tr>";
+            cadena += "<th>Euro</th>";
+            cadena += "<th>Dollar</th>";
+            cadena += "<th>Yen</th>";
+            cadena += "<th>Lliura</th>";
+        cadena += "</tr>";
+        while (i < 100) {
+            cadena += "<tr>";
+            if (i < 5) {
+                i++;
+                cadena += "<td>" + i + "</td>";
+                cadena += "<td>" + (i * 1.12052).toFixed(2) + "</td>";
+                cadena += "<td>" + (i * 122.006).toFixed(2) + "</td>";
+                cadena += "<td>" + (i * 0.899078).toFixed(2) + "</td>";
+            } else if ( i < 25) {
+                i = i + 5;
+                cadena += "<td>" + i + "</td>";
+                cadena += "<td>" + (i * 1.12052).toFixed(2) + "</td>";
+                cadena += "<td>" + (i * 122.006).toFixed(2) + "</td>";
+                cadena += "<td>" + (i * 0.899078).toFixed(2) + "</td>";
+            } else if ( i < 50 ) {
+                i = i + 25;
+                cadena += "<td>" + i + "</td>";
+                cadena += "<td>" + (i * 1.12052).toFixed(2) + "</td>";
+                cadena += "<td>" + (i * 122.006).toFixed(2) + "</td>";
+                cadena += "<td>" + (i * 0.899078).toFixed(2) + "</td>";
+            } else if ( i < 100 ) {
+                i = i + 50;
+                cadena += "<td>" + i + "</td>";
+                cadena += "<td>" + (i * 1.12052).toFixed(2) + "</td>";
+                cadena += "<td>" + (i * 122.006).toFixed(2) + "</td>";
+                cadena += "<td>" + (i * 0.899078).toFixed(2) + "</td>";
+            }
+            cadena += "</tr>";
+        }
+        cadena += "</table>";
+        document.getElementById('result').innerHTML = cadena;
+    </script>
+</body>
+</html>
