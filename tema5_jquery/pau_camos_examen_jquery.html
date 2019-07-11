@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<style>
+    #result {
+        width: 25%;
+    }
+</style>
+<body>
+<h1>Escull una moneda:</h1>
+    <select id="monedes">
+        <option>-- Selecciona una moneda --</option>
+        <option value="USD">Dollar</option>
+        <option value="JPY">Yen</option>
+        <option value="GBP">Lliures</option>
+        <option value="MXN">Pesos MX</option>
+    </select> <br>
+    <h2>Tasa d'intercanvi:</h2>
+        <div id="result">
+            <div id="progressbar1"></div>
+            <div id="progressbar2"></div>
+            <div id="progressbar3"></div>
+            <div id="progressbar4"></div>
+            <div id="progressbar5"></div>
+        </div>
+<script>
+    $(function () {
+        var d = new Date();
+
+        var dia = 0;
+        var diaSet = d.getDay();
+        var contador = 1 - diaSet;
+        var mes = "";
+
+        if ((d.getMonth()+1) < 10) {
+            mes = "0" + (d.getMonth()+1);
+        } else {
+            mes = d.getMonth()+1;
+        }
+
+        if((d.getDate())<10) {
+            dia = "0" + (d.getDate());
+        } else {
+            dia = d.getDate();
+        }
+
+        var dataFinal = dia+contador;
+
+        $('#monedes').change(function () {
+            var valor = $('#monedes').val();
+                    switch (valor) {
+                        case "USD":
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+mes+"-"+dataFinal+"?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar1" ).progressbar({
+                                        value: data.rates.USD,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-24?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar2" ).progressbar({
+                                        value: data.rates.USD,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-17?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar3" ).progressbar({
+                                        value: data.rates.USD,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-10?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar4" ).progressbar({
+                                        value: data.rates.USD,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-03?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar5" ).progressbar({
+                                        value: data.rates.USD,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            break;
+                        case "JPY":
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+mes+"-"+dataFinal+"?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar1" ).progressbar({
+                                        value: data.rates.JPY,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-24?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar2" ).progressbar({
+                                        value: data.rates.JPY,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-17?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar3" ).progressbar({
+                                        value: data.rates.JPY,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-10?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar4" ).progressbar({
+                                        value: data.rates.JPY,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-03?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar5" ).progressbar({
+                                        value: data.rates.JPY,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            break;
+                        case "GBP":
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+mes+"-"+dataFinal+"?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar1" ).progressbar({
+                                        value: data.rates.GBP,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-24?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar2" ).progressbar({
+                                        value: data.rates.GBP,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-17?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar3" ).progressbar({
+                                        value: data.rates.GBP,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-10?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar4" ).progressbar({
+                                        value: data.rates.GBP,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-03?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar5" ).progressbar({
+                                        value: data.rates.GBP,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            break;
+                        case "MXN":
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+mes+"-"+dataFinal+"?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar1" ).progressbar({
+                                        value: data.rates.MXN,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-24?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar2" ).progressbar({
+                                        value: data.rates.MXN,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-17?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar3" ).progressbar({
+                                        value: data.rates.MXN,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-10?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar4" ).progressbar({
+                                        value: data.rates.MXN,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            $.ajax({
+                                url: "https://api.ratesapi.io/api/2019-"+(mes-1)+"-03?base=EUR&symbols=" + valor,
+                                method: "GET",
+                                dataType: "json",
+                                success: function (data) {
+                                    $( "#progressbar5" ).progressbar({
+                                        value: data.rates.MXN,
+                                        max: 5
+                                    });
+                                }
+                            });
+                            break;
+                    }
+        });
+    });
+</script>
+</body>
+</html>
