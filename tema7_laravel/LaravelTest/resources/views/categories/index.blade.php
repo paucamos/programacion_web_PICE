@@ -15,7 +15,7 @@
             <td>
                 <a href="{{route('categories.show', $category->id)}}">Veure</a>
                 <a href="{{route('categories.edit', $category->id)}}">Modificar</a>
-                <a>Eliminar</a>
+                <a href="{{route('destroyCategory', $category->id)}}">Eliminar</a>
             </td>
         </tr>
         @empty

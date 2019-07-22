@@ -21,3 +21,5 @@ Route::get('/idioma/{locale}', array('uses'=>'ProductsController@canviIdioma', '
 
 Route::get('/cataleg/detall/{id}', array('uses'=>'ProductsController@detallCataleg', 'as'=>'cataleg_detall'));
 Route::resource('/categories', 'CategoriesController');
+Route::get('/categories/delete/{id}', array('uses' => 'CategoriesController@destroy', 'as' => 'destroyCategory'));
+Route::resource('/brands', 'BrandsController');

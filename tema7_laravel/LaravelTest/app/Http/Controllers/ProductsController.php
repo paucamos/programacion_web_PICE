@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Category;
 use Illuminate\Support\Facades\App;
 use App\Models\Post;
 use App\Product;

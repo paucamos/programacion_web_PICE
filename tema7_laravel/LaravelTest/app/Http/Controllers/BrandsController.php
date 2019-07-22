@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Category;
+use App\Brands;
 use Illuminate\Http\Request;
 
-class CategoriesController extends Controller
+class BrandsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,8 +14,8 @@ class CategoriesController extends Controller
      */
     public function index()
     {
-        $categories = Category::get();
-        return view('categories.index', compact('categories'));
+        $brands = Brands::get();
+        return view('brands.index', compact('brands'));
     }
 
     /**
@@ -25,7 +25,7 @@ class CategoriesController extends Controller
      */
     public function create()
     {
-        return view('categories.create');
+        //
     }
 
     /**
@@ -36,12 +36,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        $data = [
-            "name" => $request->name,
-            "icon" => $request->icon
-        ];
-        @$category = Category::create($data);
-        return redirect('categories');
+        //
     }
 
     /**
@@ -52,8 +47,7 @@ class CategoriesController extends Controller
      */
     public function show($id)
     {
-        $category = Category::find($id);
-        return view('categories.show', compact('category'));
+        //
     }
 
     /**
@@ -64,8 +58,7 @@ class CategoriesController extends Controller
      */
     public function edit($id)
     {
-        $category = Category::find($id);
-        return view('categories.edit', compact('category'));
+        //
     }
 
     /**
@@ -77,13 +70,7 @@ class CategoriesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = [
-            "name" => $request->name,
-            "icon" => $request->icon
-        ];
-        $category = Category::find($id);
-        $category->update($data);
-        return redirect('categories');
+        //
     }
 
     /**
@@ -94,9 +81,6 @@ class CategoriesController extends Controller
      */
     public function destroy($id)
     {
-        $category = Category::find($id);
-        $category->delete();
-
-        return redirect('categories');
+        //
     }
 }
