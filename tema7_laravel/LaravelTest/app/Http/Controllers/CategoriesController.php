@@ -2,8 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Brands;
 use App\Category;
+use Validator;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Redirect;
 
 class CategoriesController extends Controller
 {
@@ -36,10 +40,15 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
+        $input = Input::all();
+        $validation = Validator::make($input,Category::$rules);
         $data = [
             "name" => $request->name,
             "icon" => $request->icon
         ];
+        if ($validation->fails()) {
+            return Redirect::back()->withErrors($validation)->withInput();
+        }
         @$category = Category::create($data);
         return redirect('categories');
     }

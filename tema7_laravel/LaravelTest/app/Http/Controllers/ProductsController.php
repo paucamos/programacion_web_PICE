@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Brands;
 use App\Category;
 use Illuminate\Support\Facades\App;
 use App\Models\Post;
@@ -10,6 +11,12 @@ use Illuminate\Http\Request;
 
 class ProductsController extends Controller
 {
+    public function index() {
+        $products = Product::get();
+        $categories = Category::get();
+        $brands = Brands::get();
+        return view('index', compact('products', 'categories', 'brands'));
+    }
     public function cataleg() {
         $products = Product::get();
         return view('cataleg.index', compact('products'));
